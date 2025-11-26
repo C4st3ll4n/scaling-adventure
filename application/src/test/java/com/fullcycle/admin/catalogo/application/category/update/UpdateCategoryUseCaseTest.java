@@ -35,13 +35,6 @@ public class UpdateCategoryUseCaseTest {
         Mockito.reset(categoryGateway);
     }
 
-
-    // 1. Teste do caminho feliz
-    // 2. Teste passando uma propriedade inválida (name)
-    // 3. Teste atualizando uma categoria para inativa
-    // 4. Teste simulando um erro generico vindo do gateway
-    // 5. Teste atualizar categoria passando ID inválido
-
     @Test
     public void givenAValidCommand_whenCallsUpdateCategory_shouldReturnCategoryId() {
         final var aCategory =
