@@ -7,6 +7,7 @@ import com.fullcycle.admin.catalogo.domain.validation.ValidationHandler;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Notification implements ValidationHandler {
 
     private final List<Error> errors;
@@ -40,19 +41,26 @@ public class Notification implements ValidationHandler {
     }
 
     @Override
-    public Notification validate(final Validation aValidation) {
+    public <T> T validate(final Validation<T> aValidation) {
         try {
-            aValidation.validate();
+            return aValidation.validate();
         } catch (final DomainException ex) {
             this.errors.addAll(ex.getErrors());
         } catch (final Throwable t) {
             this.errors.add(new Error(t.getMessage()));
         }
-        return this;
+        return null;
     }
 
     @Override
     public List<Error> getErrors() {
         return this.errors;
+    }
+
+    @Override
+    public String toString() {
+        return "Notification{" +
+                "errors=" + errors +
+                '}';
     }
 }
