@@ -1,5 +1,6 @@
 package com.fullcycle.admin.catalogo.application.genre.retrieve.list;
 
+import com.fullcycle.admin.catalogo.domain.category.CategoryID;
 import com.fullcycle.admin.catalogo.domain.genre.Genre;
 
 import java.time.Instant;
@@ -11,7 +12,8 @@ public record GenreListOutput(
         boolean isActive,
         List<String> categories,
         Instant createdAt,
-        Instant deletedAt
+        Instant deletedAt,
+        Instant updatedAt
 ) {
 
     public static GenreListOutput from(final Genre aGenre) {
@@ -20,10 +22,11 @@ public record GenreListOutput(
                 aGenre.getName(),
                 aGenre.isActive(),
                 aGenre.getCategories().stream()
-                        .map(categoryID -> categoryID.getValue())
+                        .map(CategoryID::getValue)
                         .toList(),
                 aGenre.getCreatedAt(),
-                aGenre.getDeletedAt()
+                aGenre.getDeletedAt(),
+                aGenre.getUpdatedAt()
         );
     }
 }

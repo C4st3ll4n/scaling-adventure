@@ -1,7 +1,6 @@
 package com.fullcycle.admin.catalogo.application.genre.retrieve.list;
 
 import com.fullcycle.admin.catalogo.application.UseCaseTest;
-import com.fullcycle.admin.catalogo.domain.category.CategoryID;
 import com.fullcycle.admin.catalogo.domain.genre.Genre;
 import com.fullcycle.admin.catalogo.domain.genre.GenreGateway;
 import com.fullcycle.admin.catalogo.domain.pagination.Pagination;

@@ -1,6 +1,5 @@
 package com.fullcycle.admin.catalogo.application.genre.update;
 
-import com.fullcycle.admin.catalogo.domain.category.CategoryID;
 import com.fullcycle.admin.catalogo.domain.genre.GenreID;
 
 import java.util.List;
